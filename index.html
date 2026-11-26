@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<!--
+  Guia de Inscrições: Provas e Concursos
+  Estrutura: index.html (conteúdo) + styles.css (visual) + script.js (interações)
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de Inscrições: Provas e Concursos</title>
+  <meta name="description" content="Portal informativo com passos e links oficiais para inscrição no ENEM, ENCCEJA, Vestibular UFSC, Vestibular FMP, IFSC e Concursos Públicos.">
+
+  <!--
+    Tipografia: a fonte Rawline não possui CDN oficial no Google Fonts.
+    Se você tiver os arquivos da Rawline, declare-os com @font-face no styles.css.
+    Enquanto isso, usamos Inter (Google Fonts) como fallback limpo.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Link de acessibilidade: pula direto para o conteúdo -->
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#topo" id="topo">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="bm-green"></span><span class="bm-yellow"></span>
+        </span>
+        <span class="brand-text">Guia de Inscrições: <strong>Provas e Concursos</strong></span>
+      </a>
+
+    </div>
+
+    <!-- Navegação rápida para as 4 seções -->
+    <nav class="main-nav" aria-label="Navegação rápida (abre a aba correspondente)">
+      <ul class="container">
+        <li><a href="#enem">ENEM</a></li>
+        <li><a href="#encceja">ENCCEJA</a></li>
+        <li><a href="#ufsc">Vestibular UFSC</a></li>
+        <li><a href="#fmp">Vestibular FMP</a></li>
+        <li><a href="#ifsc">IFSC</a></li>
+        <li><a href="#concursos">Concursos Públicos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" aria-labelledby="hero-titulo">
+      <div class="container">
+        <h1 id="hero-titulo">Tudo o que você precisa para se inscrever, em um só lugar</h1>
+        <p>
+          Este portal centraliza os passos e os <strong>links oficiais</strong> para inscrição
+          e para o acompanhamento do <strong>local de prova</strong> no ENEM, ENCCEJA,
+          Vestibular UFSC, Vestibular FMP, IFSC e Concursos Públicos.
+        </p>
+      </div>
+    </section>
+
+    <div class="container layout">
+
+      <!-- ===================== CARDS ===================== -->
+      <section class="cards-area" aria-labelledby="titulo-cards">
+        <h2 id="titulo-cards" class="section-title">Escolha a modalidade</h2>
+
+        <!-- Filtros por categoria -->
+        <div class="filters" role="group" aria-label="Filtrar por categoria">
+          <button type="button" class="filter-btn is-active" data-filter="todos" aria-pressed="true">Todos</button>
+          <button type="button" class="filter-btn" data-filter="exames" aria-pressed="false">Vestibulares/Exames</button>
+          <button type="button" class="filter-btn" data-filter="concursos" aria-pressed="false">Concursos</button>
+        </div>
+
+        <!-- Feedback para leitores de tela -->
+        <p id="status-resultados" class="visually-hidden" aria-live="polite"></p>
+
+        <!-- Abas: uma para cada exame/concurso -->
+        <div class="tabs" role="tablist" aria-label="Exames e concursos" id="tablist">
+          <button type="button" role="tab" id="tab-enem" class="tab" data-tab="enem" data-category="exames" aria-controls="enem" aria-selected="true">ENEM</button>
+          <button type="button" role="tab" id="tab-encceja" class="tab" data-tab="encceja" data-category="exames" aria-controls="encceja" aria-selected="false" tabindex="-1">ENCCEJA</button>
+          <button type="button" role="tab" id="tab-ufsc" class="tab" data-tab="ufsc" data-category="exames" aria-controls="ufsc" aria-selected="false" tabindex="-1">Vestibular UFSC</button>
+          <button type="button" role="tab" id="tab-fmp" class="tab" data-tab="fmp" data-category="exames" aria-controls="fmp" aria-selected="false" tabindex="-1">Vestibular FMP</button>
+          <button type="button" role="tab" id="tab-ifsc" class="tab" data-tab="ifsc" data-category="exames" aria-controls="ifsc" aria-selected="false" tabindex="-1">IFSC</button>
+          <button type="button" role="tab" id="tab-concursos" class="tab" data-tab="concursos" data-category="concursos" aria-controls="concursos" aria-selected="false" tabindex="-1">Concursos Públicos</button>
+        </div>
+
+        <div class="panels" id="panels">
+
+          <!-- CARD 1: ENEM -->
+          <article class="card" role="tabpanel" id="enem" aria-labelledby="tab-enem" tabindex="0" data-category="exames"
+                   data-keywords="enem inep mec gov.br participante edital inscrição">
+            <header class="card-header">
+              <span class="tag">Exame</span>
+              <h3>ENEM</h3>
+            </header>
+            <div class="card-logo"><img src="img/enem.png" alt="Logotipo do ENEM" loading="lazy"></div>
+            <ol class="steps">
+              <li class="step">
+                <span class="step-num" aria-hidden="true">1</span>
+                <div class="step-body">
+                  <h4>Edital</h4>
+                  <p>Acesse o portal de normas do MEC para conferir a abertura das inscrições.</p>
+                  <a class="btn btn-primary" href="https://mecnormas.mec.gov.br/pesquisa/assunto/enem?sistema=1&ordenacao=2" target="_blank" rel="noopener noreferrer">
+                    Consultar Edital <span class="sr-only">(abre em nova aba)</span><span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step-num" aria-hidden="true">2</span>
+                <div class="step-body">
+                  <h4>Inscrição</h4>
+                  <p>Quando abrir, acesse a Página do Participante do INEP, entre com sua conta Gov.br e preencha seus dados.</p>
+                  <a class="btn btn-secondary" href="https://enem.inep.gov.br/participante/#!/" target="_blank" rel="noopener noreferrer">
+                    Acessar Página do Participante <span class="sr-only">(abre em nova aba)</span><span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step-num" aria-hidden="true">3</span>
+                <div class="step-body">
+                  <h4>Acompanhamento</h4>
+                  <p class="alert"><strong>Atenção:</strong> lembre-se de conferir o site regularmente para verificar o local de realização da prova.</p>
+                </div>
+              </li>
+            </ol>
+            <section class="study" aria-label="Estudo com provas anteriores">
+              <h4><span aria-hidden="true">📚</span> Estude com provas anteriores</h4>
+              <p>Treine com as provas e gabaritos oficiais de edições anteriores do ENEM.</p>
+              <a class="btn btn-secondary" href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos" target="_blank" rel="noopener noreferrer">
+                Provas e Gabaritos do ENEM <span class="sr-only">(abre em nova aba)</span><span aria-hidden="true">↗</span>
+              </a>
+            </section>
+          </article>
+
+          <!-- CARD 2: ENCCEJA -->
+          <article class="card" role="tabpanel" id="encceja" aria-labelledby="tab-encceja" tabindex="0" data-category="exames"
+                   data-keywords="encceja inep educação jovens adultos certificação edital inscrição">
+            <header class="card-header">
+              <span class="tag">Exame</span>
+              <h3>ENCCEJA</h3>
+            </header>
+            <div class="card-logo"><img src="img/encceja.png" alt="Logotipo do ENCCEJA 2025" loading="lazy"></div>
+            <ol class="steps">
+              <li class="step">
+                <span class="step-num" aria-hidden="true">1</span>
+                <div class="step-body">
+                  <h4>Edital</h4>
+                  <p>Confira a legislação e o edital oficial no portal do INEP.</p>
+                  <a class="btn btn-primary" href="https://www.gov.br/inep/pt-br/centrais-de-conteudo/legislacao/encceja" target="_blank" rel="noopener noreferrer">
+                    Acessar Edital <span class="sr-only">(abre em nova aba)</span><span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step-num" aria-hidden="true">2</span>
+                <div class="step-body">
+                  <h4>Inscrição</h4>
+                  <p>Assim que as inscrições abrirem, realize seu cadastro no sistema oficial.</p>
+                  <a class="btn btn-secondary" href="https://enccejanacional.inep.gov.br/encceja/#!/inicial" target="_blank" rel="noopener noreferrer">
+                    Fazer Inscrição <span class="sr-only">(abre em nova aba)</span><span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step-num" aria-hidden="true">3</span>
+                <div class="step-body">
+                  <h4>Acompanhamento</h4>
+                  <p class="alert"><strong>Atenção:</strong> após se inscrever, acompanhe o sistema periodicamente para consultar o local da prova.</p>
+                </div>
+              </li>
+            </ol>
+            <section class="study" aria-label="Estudo com provas anteriores">
+              <h4><span aria-hidden="true">📚</span> Estude com provas anteriores</h4>
+              <p>Pratique com as provas e gabaritos oficiais de edições anteriores do ENCCEJA.</p>
+              <a class="btn btn-secondary" href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/encceja/provas-e-gabaritos" target="_blank" rel="noopener noreferrer">
+                Provas e Gabaritos do ENCCEJA <span class="sr-only">(abre em nova aba)</span><span aria-hidden="true">↗</span>
+              </a>
+            </section>
+          </article>
+
+          <!-- CARD 3: VESTIBULAR UFSC -->
+          <article class="card" role="tabpanel" id="ufsc" aria-labelledby="tab-ufsc" tabindex="0" data-category="exames"
+                   data-keywords="vestibular ufsc coperve edital inscrição santa catarina universidade">
+            <header class="card-header">
+              <span class="tag">Vestibular</span>
+              <h3>Vestibular UFSC</h3>
+            </header>
+            <div class="card-logo"><img src="img/ufsc.png" alt="Brasão e logotipo da UFSC" loading="lazy"></div>
+            <ol class="steps">
+              <li class="step">
+                <span class="step-num" aria-hidden="true">1</span>
+                <div class="step-body">
+                  <h4>Portal e Edital</h4>
+                  <p>Acesse o site da COPERVE, selecione a edição do ano desejado e leia o edital atentamente antes de iniciar.</p>
+                  <a class="btn btn-primary" href="https://coperve.ufsc.br/" target="_blank" rel="noopener noreferrer">
+                    Acessar Portal COPERVE <span class="sr-only">(abre em nova aba)</span><span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step-num" aria-hidden="true">2</span>
+                <div class="step-body">
+                  <h4>Cadastro</h4>
+                  <p>Faça login e preencha o formulário de inscrição para o vestibular.</p>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step-num" aria-hidden="true">3</span>
+                <div class="step-body">
+                  <h4>Acompanhamento</h4>
+                  <p class="alert"><strong>Atenção:</strong> sempre confira o portal próximo à data para verificar seu local de prova.</p>
+                </div>
+              </li>
+            </ol>
+            <section class="study" aria-label="Estudo com provas anteriores">
+              <h4><span aria-hidden="true">📚</span> Estude com provas anteriores</h4>
+              <p>Estude com as provas de edições anteriores do Vestibular UFSC.</p>
+              <a class="btn btn-secondary" href="https://vestibularunificado2025.ufsc.br/provas-anteriores/" target="_blank" rel="noopener noreferrer">
+                Provas Anteriores da UFSC <span class="sr-only">(abre em nova aba)</span><span aria-hidden="true">↗</span>
+              </a>
+            </section>
+          </article>
+
+          <!-- CARD 4: VESTIBULAR FMP -->
+          <article class="card" role="tabpanel" id="fmp" aria-labelledby="tab-fmp" tabindex="0" data-category="exames"
+                   data-keywords="vestibular fmp faculdade palhoça santa catarina edital inscrição">
+            <header class="card-header">
+              <span class="tag">Vestibular</span>
+              <h3>Vestibular FMP</h3>
+            </header>
+            <div class="card-logo card-logo--dark"><img src="img/fmp.png" alt="Logotipo da Faculdade FMP, Palhoça (SC)" loading="lazy"></div>
+            <ol class="steps">
+              <li class="step">
+                <span class="step-num" aria-hidden="true">1</span>
+                <div class="step-body">
+                  <h4>Portal e Edital</h4>
+                  <p>Acesse o site do vestibular da Faculdade FMP (Palhoça – SC), confira as informações do processo seletivo e leia o edital antes de iniciar.</p>
+                  <a class="btn btn-primary" href="https://sites.google.com/fmpsc.edu.br/vestibular-fmp/p%C3%A1gina-inicial?authuser=0" target="_blank" rel="noopener noreferrer">
+                    Acessar Vestibular FMP <span class="sr-only">(abre em nova aba)</span><span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step-num" aria-hidden="true">2</span>
+                <div class="step-body">
+                  <h4>Inscrição</h4>
+                  <p>Siga as orientações do site para escolher o curso e preencher sua inscrição.</p>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step-num" aria-hidden="true">3</span>
+                <div class="step-body">
+                  <h4>Acompanhamento</h4>
+                  <p class="alert"><strong>Atenção:</strong> consulte o site com frequência para conferir datas, resultados e o local de prova.</p>
+                </div>
+              </li>
+            </ol>
+            <section class="study" aria-label="Material de estudo e editais">
+              <h4><span aria-hidden="true">📚</span> Estude e confira os editais</h4>
+              <p>Acesse o material de estudo e os editais do vestibular da FMP.</p>
+              <div class="study-links">
+                <a class="btn btn-secondary" href="https://drive.google.com/drive/folders/1UXOUxdYzalnhq7ugUHMAPqz4Vua2VidD" target="_blank" rel="noopener noreferrer">
+                  Material de Estudo (Google Drive) <span class="sr-only">(abre em nova aba)</span><span aria-hidden="true">↗</span>
+                </a>
+                <a class="btn btn-secondary" href="https://sites.google.com/fmpsc.edu.br/vestibular-fmp/editais-2026/edital-004fmp2026" target="_blank" rel="noopener noreferrer">
+                  Edital 004/FMP/2026 <span class="sr-only">(abre em nova aba)</span><span aria-hidden="true">↗</span>
+                </a>
+                <a class="btn btn-secondary" href="https://sites.google.com/fmpsc.edu.br/vestibular-fmp/editais-2026/edital-014fmp2026" target="_blank" rel="noopener noreferrer">
+                  Edital 014/FMP/2026 <span class="sr-only">(abre em nova aba)</span><span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </section>
+          </article>
+
+          <!-- CARD 5: IFSC -->
+          <article class="card" role="tabpanel" id="ifsc" aria-labelledby="tab-ifsc" tabindex="0" data-category="exames"
+                   data-keywords="ifsc instituto federal santa catarina editais cursos cidade campus inscrição">
+            <header class="card-header">
+              <span class="tag">Processo seletivo</span>
+              <h3>IFSC</h3>
+            </header>
+            <div class="card-logo"><img src="img/ifsc.png" alt="Logotipo do Instituto Federal de Santa Catarina (IFSC)" loading="lazy"></div>
+            <ol class="steps">
+              <li class="step">
+                <span class="step-num" aria-hidden="true">1</span>
+                <div class="step-body">
+                  <h4>Editais abertos</h4>
+                  <p>Acesse a página de editais com inscrições abertas do IFSC.</p>
+                  <a class="btn btn-primary" href="https://www.ifsc.edu.br/editais-com-inscricoes-abertas" target="_blank" rel="noopener noreferrer">
+                    Ver Editais Abertos <span class="sr-only">(abre em nova aba)</span><span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step-num" aria-hidden="true">2</span>
+                <div class="step-body">
+                  <h4>Cidade</h4>
+                  <p>Selecione a cidade (campus) em que deseja estudar.</p>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step-num" aria-hidden="true">3</span>
+                <div class="step-body">
+                  <h4>Curso</h4>
+                  <p>Selecione o curso de seu interesse e leia o edital correspondente.</p>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step-num" aria-hidden="true">4</span>
+                <div class="step-body">
+                  <h4>Cadastro</h4>
+                  <p>Realize o cadastro e a inscrição seguindo as orientações do edital.</p>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step-num" aria-hidden="true">5</span>
+                <div class="step-body">
+                  <h4>Acompanhamento</h4>
+                  <p class="alert"><strong>Atenção:</strong> acompanhe o site do IFSC para atualizações e para saber quando sair o resultado.</p>
+                </div>
+              </li>
+            </ol>
+            <section class="study" aria-label="Estudo com provas anteriores">
+              <h4><span aria-hidden="true">📚</span> Estude com provas anteriores</h4>
+              <p>Estude com as provas e gabaritos de processos seletivos anteriores do IFSC.</p>
+              <a class="btn btn-secondary" href="https://www.ifsc.edu.br/provas-e-gabaritos" target="_blank" rel="noopener noreferrer">
+                Provas e Gabaritos do IFSC <span class="sr-only">(abre em nova aba)</span><span aria-hidden="true">↗</span>
+              </a>
+            </section>
+          </article>
+
+          <!-- CARD 6: CONCURSOS PÚBLICOS -->
+          <article class="card" role="tabpanel" id="concursos" aria-labelledby="tab-concursos" tabindex="0" data-category="concursos"
+                   data-keywords="concursos públicos pci concursos estado vaga edital">
+            <header class="card-header">
+              <span class="tag">Concurso</span>
+              <h3>Concursos Públicos</h3>
+            </header>
+            <ol class="steps">
+              <li class="step">
+                <span class="step-num" aria-hidden="true">1</span>
+                <div class="step-body">
+                  <h4>Busca por Estado</h4>
+                  <p>Acesse o portal PCI Concursos.</p>
+                  <a class="btn btn-primary" href="https://www.pciconcursos.com.br/concursos" target="_blank" rel="noopener noreferrer">
+                    Buscar Concursos <span class="sr-only">(abre em nova aba)</span><span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step-num" aria-hidden="true">2</span>
+                <div class="step-body">
+                  <h4>Seleção</h4>
+                  <p>Filtre pelo estado em que deseja participar e escolha a vaga de seu interesse para ler o edital e se inscrever.</p>
+                </div>
+              </li>
+            </ol>
+          </article>
+        </div>
+
+        <!-- Mensagem quando nenhum card corresponde à busca/filtro -->
+        <p id="sem-resultados" class="no-results" hidden>
+          Nenhuma aba encontrada para este filtro. Escolha "Todos".
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        <strong>Guia informativo.</strong> Este site não é um portal oficial: apenas reúne
+        links diretos para os portais oficiais de cada exame e concurso.
+        Confirme sempre datas, regras e prazos nos editais.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
